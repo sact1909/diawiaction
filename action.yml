@@ -1,0 +1,14 @@
+name: 'Diawi Distribute'
+description: 'Distribute Android and iOS application files to testers'
+inputs:
+  api-key:  
+    description: 'Api key from Diawi'
+    required: true
+    default: ''
+  file-route:
+    description: 'Apk or IPA file route'
+    required: true
+    default: ''
+runs:
+  using: 'node20'
+  main: 'index.js'
