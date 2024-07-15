@@ -48,19 +48,43 @@ function run() {
             console.log(`Diawi ApiKey ******`);
             const fileRoute = core.getInput('file-route');
             console.log(`File Route: ${fileRoute}`);
-            const result = yield (0, diawi_nodejs_uploader_1.upload)({
+            const callbackEmails = core.getInput('emails-to-deliver');
+            console.log(`Emails to Deliver: ******`);
+            const comment = core.getInput('comment');
+            console.log(`Comment: ${comment}`);
+            const installationNotifications = !!core.getInput('installation-notifications') || false;
+            console.log(`Installation Notifications: ${installationNotifications ? 'Yes' : 'No'}`);
+            const password = core.getInput('installation-password');
+            console.log(`Password: ******`);
+            let setting = {
                 file: fileRoute,
                 token: apiKey,
-                callback_emails: 'steven.checo.19@gmail.com'
-            });
-            core.setOutput("result", result);
+                installation_notifications: installationNotifications
+            };
+            if (password.length > 0) {
+                setting = Object.assign(Object.assign({}, setting), { password: password });
+            }
+            if (comment.length > 0) {
+                setting = Object.assign(Object.assign({}, setting), { comment: comment });
+            }
+            if (callbackEmails.length > 0) {
+                const commaSeparated = callbackEmailsTransformation(callbackEmails);
+                setting = Object.assign(Object.assign({}, setting), { callback_emails: commaSeparated });
+            }
+            const result = yield (0, diawi_nodejs_uploader_1.upload)(setting);
             console.log(result);
+            core.setOutput("webapp-url", result.link);
         }
         catch (error) {
             core.setFailed(error.message);
         }
     });
 }
+const callbackEmailsTransformation = (emails) => {
+    const emailArray = emails.replace(/\s+/g, '').replace(/\n+/g, ',').split(',');
+    const uniqueEmails = [...new Set(emailArray)]; // remove duplicates
+    return uniqueEmails.join(',');
+};
 run();
 
 

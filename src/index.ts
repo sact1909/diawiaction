@@ -1,25 +1,53 @@
 import * as core from "@actions/core";
-import { upload } from 'diawi-nodejs-uploader';
+import { ApiUploadProps, upload } from 'diawi-nodejs-uploader';
 
 async function run(){
   try {
 
-    const apiKey = core.getInput('api-key');
+    const apiKey:string = core.getInput('api-key');
     console.log(`Diawi ApiKey ******`);
-    const fileRoute = core.getInput('file-route');
+    const fileRoute:string = core.getInput('file-route');
     console.log(`File Route: ${fileRoute}`);
+    const callbackEmails:string = core.getInput('emails-to-deliver');
+    console.log(`Emails to Deliver: ******`);
+    const comment:string = core.getInput('comment');
+    console.log(`Comment: ${comment}`);
+    const installationNotifications:boolean = !!core.getInput('installation-notifications') || false;
+    console.log(`Installation Notifications: ${installationNotifications ? 'Yes' : 'No'}`);
+    const password:string = core.getInput('installation-password');
+    console.log(`Password: ******`);
 
-    const result = await upload({
+    let setting:ApiUploadProps = {
         file: fileRoute,
         token: apiKey,
-        callback_emails: 'steven.checo.19@gmail.com'
-    });
-    
-    core.setOutput("result", result);
+        installation_notifications: installationNotifications
+    };
+
+    if(password.length > 0){
+        setting = {...setting, password:password};
+    }
+
+    if(comment.length > 0){
+        setting = {...setting, comment:comment};
+    }
+
+    if(callbackEmails.length > 0){
+        const commaSeparated = callbackEmailsTransformation(callbackEmails);
+        setting = {...setting, callback_emails:commaSeparated};
+    }
+
+    const result = await upload(setting);
     console.log(result);
+    core.setOutput("webapp-url", result.link);
   } catch (error:any) {
     core.setFailed(error.message);
   }
 }
+
+const callbackEmailsTransformation = (emails:string) => {
+  const emailArray = emails.replace(/\s+/g, '').replace(/\n+/g, ',').split(',');
+  const uniqueEmails = [...new Set(emailArray)]; // remove duplicates
+  return uniqueEmails.join(',');
+};
 
 run();

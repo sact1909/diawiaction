@@ -10,6 +10,25 @@ inputs:
     description: 'Apk or IPA file route'
     required: true
     default: ''
+  emails-to-deliver:
+    description: 'Emails to the app will be deliver, separated by comma'
+    required: false
+    default: ''
+  comment:
+    description: 'Build comment'
+    required: false
+    default: ''
+  installation-notifications: 
+    description: 'Receive notifications each time someone installs the app'
+    required: false
+    default: false
+  installation-password:
+    description: 'Password to install the app'
+    required: false
+    default: ''
+outputs:
+  webapp-url:
+    description: 'URL to download the app'
 runs:
   using: 'node20'
   main: 'dist/index.js'
