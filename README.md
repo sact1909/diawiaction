@@ -52,16 +52,6 @@ with:
   comment: 'This build is just a test'
 ```
 
-## Set whenever you want to receive installation confirmation
-
-```yaml
-uses: sact1909/diawiaction@v1
-with:
-  api-key: ${{API_KEY}}
-  file-route: 'myapp/myapp.apk',
-  installation-notifications: true
-```
-
 ## Set a installation password to protect your files
 
 ```yaml

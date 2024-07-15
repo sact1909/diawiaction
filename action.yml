@@ -18,9 +18,6 @@ inputs:
     description: 'Build comment'
     required: false
     default: ''
-  installation-notifications: 
-    description: 'Receive notifications each time someone installs the app'
-    required: false
   installation-password:
     description: 'Password to install the app'
     required: false

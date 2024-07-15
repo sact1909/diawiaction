@@ -12,38 +12,28 @@ async function run(){
     console.log(`Emails to Deliver: ******`);
     const comment:string = core.getInput('comment');
     console.log(`Comment: ${comment}`);
-    const installationNotifications:boolean = !!core.getInput('installation-notifications') || false;
-    console.log(`Installation Notifications: ${installationNotifications}`);
+    // const installationNotifications:boolean = !!core.getInput('installation-notifications') || false;
+    // console.log(`Installation Notifications: ${installationNotifications}`);
     const password:string = core.getInput('installation-password');
     console.log(`Password: ******`);
 
     let setting:ApiUploadProps = {
         file: fileRoute,
-        token: apiKey,
-        callback_emails:'',
-        callback_url:'',
-        comment:'',
-        password:''
+        token: apiKey
     };
 
-    setting.installation_notifications = false;
+    if(password.length > 0){
+      setting.password = password;
+    }
 
-    // if(password.length > 0){
-    //     setting.password = password;
-    // }
+    if(comment.length > 0){
+        setting.comment = comment;
+    }
 
-    // if(comment.length > 0){
-    //     setting.comment = comment;
-    // }
-
-    // console.log("print object", setting);
-
-    // console.log(`Email length: ${callbackEmails.length}`);
-
-    // if(callbackEmails.length > 0){
-    //     const commaSeparated = callbackEmailsTransformation(callbackEmails);
-    //     setting.callback_emails = commaSeparated;
-    // }
+    if(callbackEmails.length > 0){
+      const commaSeparated = callbackEmailsTransformation(callbackEmails);
+      setting.callback_emails = commaSeparated;
+    }
 
     const result = await upload(setting);
     console.log(result);
