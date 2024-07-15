@@ -9,8 +9,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "pack": "ncc build"
+    "start": "node dist/index.js"
   },
   "bin": {
     "diawi-distribute": "dist/index.js"
@@ -26,7 +25,6 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.1",
-    "@zeit/ncc": "^0.22.3",
     "diawi-nodejs-uploader": "^1.1.1"
   },
   "devDependencies": {
