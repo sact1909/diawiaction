@@ -68,10 +68,10 @@ function run() {
                 setting.comment = comment;
             }
             console.log(`Email length: ${callbackEmails.length}`);
-            if (callbackEmails.length > 0) {
-                const commaSeparated = callbackEmailsTransformation(callbackEmails);
-                setting.callback_emails = commaSeparated;
-            }
+            // if(callbackEmails.length > 0){
+            //     const commaSeparated = callbackEmailsTransformation(callbackEmails);
+            //     setting.callback_emails = commaSeparated;
+            // }
             const result = yield (0, diawi_nodejs_uploader_1.upload)(setting);
             console.log(result);
             core.setOutput("webapp-url", result.link);

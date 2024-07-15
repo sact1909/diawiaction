@@ -33,10 +33,10 @@ async function run(){
 
     console.log(`Email length: ${callbackEmails.length}`);
 
-    if(callbackEmails.length > 0){
-        const commaSeparated = callbackEmailsTransformation(callbackEmails);
-        setting.callback_emails = commaSeparated;
-    }
+    // if(callbackEmails.length > 0){
+    //     const commaSeparated = callbackEmailsTransformation(callbackEmails);
+    //     setting.callback_emails = commaSeparated;
+    // }
 
     const result = await upload(setting);
     console.log(result);
