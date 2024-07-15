@@ -23,9 +23,7 @@ async function run(){
         callback_emails:'',
         callback_url:'',
         comment:'',
-        find_by_udid:false,
-        password:'',
-        wall_of_apps:false
+        password:''
     };
 
     // if(password.length > 0){
