@@ -15,7 +15,7 @@ This action allow to distribute your APK and IPA files throught Diawi
 ## Example usage
 
 ```yaml
-uses: actions/diawi-distribute@v1
+uses: sact1909/diawiaction@v1
 with:
   api-key: '<your api key>'
   file-route: 'myapp/myapp.apk'
