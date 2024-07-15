@@ -21,7 +21,6 @@ inputs:
   installation-notifications: 
     description: 'Receive notifications each time someone installs the app'
     required: false
-    default: false
   installation-password:
     description: 'Password to install the app'
     required: false
