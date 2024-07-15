@@ -24,16 +24,16 @@ async function run(){
     };
 
     if(password.length > 0){
-        setting = {...setting, password:password};
+        setting.password = password;
     }
 
     if(comment.length > 0){
-        setting = {...setting, comment:comment};
+        setting.comment = comment;
     }
 
     if(callbackEmails.length > 0){
         const commaSeparated = callbackEmailsTransformation(callbackEmails);
-        setting = {...setting, callback_emails:commaSeparated};
+        setting.callback_emails = commaSeparated;
     }
 
     const result = await upload(setting);

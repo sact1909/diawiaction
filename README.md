@@ -39,7 +39,7 @@ uses: sact1909/diawiaction@v1
 with:
   api-key: ${{API_KEY}}
   file-route: 'myapp/myapp.apk',
-  emails-to-deliver: "example@contoso.com,example_two@contoso.com"
+  emails-to-deliver: 'example@contoso.com,example_two@contoso.com'
 ```
 
 ## You can also set build comments

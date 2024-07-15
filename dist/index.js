@@ -62,14 +62,14 @@ function run() {
                 installation_notifications: installationNotifications
             };
             if (password.length > 0) {
-                setting = Object.assign(Object.assign({}, setting), { password: password });
+                setting.password = password;
             }
             if (comment.length > 0) {
-                setting = Object.assign(Object.assign({}, setting), { comment: comment });
+                setting.comment = comment;
             }
             if (callbackEmails.length > 0) {
                 const commaSeparated = callbackEmailsTransformation(callbackEmails);
-                setting = Object.assign(Object.assign({}, setting), { callback_emails: commaSeparated });
+                setting.callback_emails = commaSeparated;
             }
             const result = yield (0, diawi_nodejs_uploader_1.upload)(setting);
             console.log(result);
