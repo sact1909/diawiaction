@@ -12,3 +12,6 @@ inputs:
 runs:
   using: 'node20'
   main: 'index.js'
+branding:
+  icon: "arrow-down-circle"
+  color: "gray-dark"
