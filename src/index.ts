@@ -13,7 +13,7 @@ async function run(){
     const comment:string = core.getInput('comment');
     console.log(`Comment: ${comment}`);
     const installationNotifications:boolean = !!core.getInput('installation-notifications') || false;
-    console.log(`Installation Notifications: ${installationNotifications ? 'Yes' : 'No'}`);
+    console.log(`Installation Notifications: ${installationNotifications}`);
     const password:string = core.getInput('installation-password');
     console.log(`Password: ******`);
 

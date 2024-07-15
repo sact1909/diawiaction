@@ -53,7 +53,7 @@ function run() {
             const comment = core.getInput('comment');
             console.log(`Comment: ${comment}`);
             const installationNotifications = !!core.getInput('installation-notifications') || false;
-            console.log(`Installation Notifications: ${installationNotifications ? 'Yes' : 'No'}`);
+            console.log(`Installation Notifications: ${installationNotifications}`);
             const password = core.getInput('installation-password');
             console.log(`Password: ******`);
             let setting = {
