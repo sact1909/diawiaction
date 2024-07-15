@@ -1,5 +1,6 @@
 name: 'Diawi Distribute'
 description: 'Distribute Android and iOS application files to testers'
+author: 'sact1909'
 inputs:
   api-key:  
     description: 'Api key from Diawi'
@@ -11,7 +12,7 @@ inputs:
     default: ''
 runs:
   using: 'node20'
-  main: 'index.js'
+  main: 'dist/index.js'
 branding:
   icon: "arrow-down-circle"
   color: "gray-dark"
