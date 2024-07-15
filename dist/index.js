@@ -67,14 +67,14 @@ function run() {
                 password: '',
                 wall_of_apps: false
             };
-            if (password.length > 0) {
-                setting.password = password;
-            }
-            if (comment.length > 0) {
-                setting.comment = comment;
-            }
-            console.log("print object", setting);
-            console.log(`Email length: ${callbackEmails.length}`);
+            // if(password.length > 0){
+            //     setting.password = password;
+            // }
+            // if(comment.length > 0){
+            //     setting.comment = comment;
+            // }
+            // console.log("print object", setting);
+            // console.log(`Email length: ${callbackEmails.length}`);
             // if(callbackEmails.length > 0){
             //     const commaSeparated = callbackEmailsTransformation(callbackEmails);
             //     setting.callback_emails = commaSeparated;

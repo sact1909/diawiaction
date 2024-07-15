@@ -29,17 +29,17 @@ async function run(){
         wall_of_apps:false
     };
 
-    if(password.length > 0){
-        setting.password = password;
-    }
+    // if(password.length > 0){
+    //     setting.password = password;
+    // }
 
-    if(comment.length > 0){
-        setting.comment = comment;
-    }
+    // if(comment.length > 0){
+    //     setting.comment = comment;
+    // }
 
-    console.log("print object", setting);
+    // console.log("print object", setting);
 
-    console.log(`Email length: ${callbackEmails.length}`);
+    // console.log(`Email length: ${callbackEmails.length}`);
 
     // if(callbackEmails.length > 0){
     //     const commaSeparated = callbackEmailsTransformation(callbackEmails);
