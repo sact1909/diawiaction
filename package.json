@@ -7,12 +7,20 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bin": {
+    "github-action-ssh": "dist/index.js"
+  },
+  "keywords": [
+    "typescript",
+    "github",
+    "github-actions",
+    "actions",
+    "diawi"
+  ],
+  "author": "sact1909",
+  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0",
     "@types/node": "^20.14.10",
     "diawi-nodejs-uploader": "^1.1.1"
   },
