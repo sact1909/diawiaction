@@ -31,6 +31,8 @@ async function run(){
         setting.comment = comment;
     }
 
+    console.log("print object", setting);
+
     console.log(`Email length: ${callbackEmails.length}`);
 
     // if(callbackEmails.length > 0){
@@ -38,9 +40,9 @@ async function run(){
     //     setting.callback_emails = commaSeparated;
     // }
 
-    const result = await upload(setting);
-    console.log(result);
-    core.setOutput("webapp-url", result.link);
+    //const result = await upload(setting);
+    //console.log(result);
+    //core.setOutput("webapp-url", result.link);
   } catch (error:any) {
     core.setFailed(error.message);
   }
