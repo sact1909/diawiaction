@@ -20,7 +20,13 @@ async function run(){
     let setting:ApiUploadProps = {
         file: fileRoute,
         token: apiKey,
-        installation_notifications: installationNotifications
+        installation_notifications: installationNotifications,
+        callback_emails:'',
+        callback_url:'',
+        comment:'',
+        find_by_udid:false,
+        password:'',
+        wall_of_apps:false
     };
 
     if(password.length > 0){
@@ -40,9 +46,9 @@ async function run(){
     //     setting.callback_emails = commaSeparated;
     // }
 
-    //const result = await upload(setting);
-    //console.log(result);
-    //core.setOutput("webapp-url", result.link);
+    const result = await upload(setting);
+    console.log(result);
+    core.setOutput("webapp-url", result.link);
   } catch (error:any) {
     core.setFailed(error.message);
   }
