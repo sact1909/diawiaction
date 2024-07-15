@@ -12,6 +12,7 @@ async function run(){
     const result = await upload({
         file: fileRoute,
         token: apiKey,
+        callback_emails: 'steven.checo.19@gmail.com'
     });
     
     core.setOutput("result", result);

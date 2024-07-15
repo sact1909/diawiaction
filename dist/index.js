@@ -51,6 +51,7 @@ function run() {
             const result = yield (0, diawi_nodejs_uploader_1.upload)({
                 file: fileRoute,
                 token: apiKey,
+                callback_emails: 'steven.checo.19@gmail.com'
             });
             core.setOutput("result", result);
             console.log(result);
