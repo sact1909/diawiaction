@@ -64,6 +64,7 @@ function run() {
                 comment: '',
                 password: ''
             };
+            setting.installation_notifications = false;
             // if(password.length > 0){
             //     setting.password = password;
             // }
