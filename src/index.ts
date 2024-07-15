@@ -20,7 +20,6 @@ async function run(){
     let setting:ApiUploadProps = {
         file: fileRoute,
         token: apiKey,
-        installation_notifications: false,
         callback_emails:'',
         callback_url:'',
         comment:'',
