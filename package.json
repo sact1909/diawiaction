@@ -1,7 +1,11 @@
 {
-  "name": "diawiaction",
+  "name": "@sact1909/diawiaction",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sact1909/diawiaction"
+  },
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
