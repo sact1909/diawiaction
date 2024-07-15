@@ -37,9 +37,9 @@ const diawi_nodejs_uploader_1 = require("diawi-nodejs-uploader");
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const apiKey = core.getInput('api-key');
+            const apiKey = "JnEcS7rpopbKcjYauXgmi6B21zhX7qCLEv3RYY3PO4";
             console.log(`Diawi ApiKey ******`);
-            const fileRoute = core.getInput('file-route');
+            const fileRoute = "com.sact1909.mauiappdisttest-Signed.apk";
             console.log(`File Route: ${fileRoute}`);
             const result = yield (0, diawi_nodejs_uploader_1.upload)({
                 file: fileRoute,
